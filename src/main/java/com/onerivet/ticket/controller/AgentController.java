@@ -12,18 +12,20 @@ import com.onerivet.ticket.service.AgentService;
 @RequestMapping("/agent")
 public class AgentController 
 {
-
-	private AgentService service;
-	
+	private AgentService service;	
 	public AgentController(AgentService service)
 	{
 		this.service = service;
 	}
-	
 	@PostMapping
 	public String addAgent(@RequestBody Agent agent)
 	{
 		return service.addAgent(agent);
 	}
-	
+
+	@GetMapping
+	public String getAgentList()
+	{
+		return "This is agent list";
+	}
 }
